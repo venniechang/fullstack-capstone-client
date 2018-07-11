@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './about.css'
 
 export default function About(props) {
@@ -12,8 +11,6 @@ export default function About(props) {
                 Sign up and start budgeting your life today!
                 </p>
 			</div>
-			<button><Link to="/login">Login</Link></button>
-			<button><Link to="/register">Register</Link></button>
 		</div>
 	);
 }
