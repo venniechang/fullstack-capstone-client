@@ -6,9 +6,12 @@ import LoginForm from './login-form'
 import RegistrationForm from './register-form';
 import Header from './header';
 import Footer from './footer';
+import {connect} from 'react-redux';
+import {getBudgets} from '../actions/budgets';
 
 
 class App extends Component {
+  componentDidMount() {this.props.dispatch(getBudgets())}
   render() {
     return (
       <Router>
@@ -26,4 +29,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
