@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import About from './about';
 import LoginForm from './login-form'
 import RegistrationForm from './register-form';
+import Dashboard from './dashboard';
 import Header from './header';
 import Footer from './footer';
 import {connect} from 'react-redux';
@@ -27,10 +28,10 @@ componentWillUnmount() {
 }
 
 startPeriodicRefresh() {
-    this.refreshInterval = setInterval(
-        () => this.props.dispatch(refreshAuthToken()),
-        60 * 60 * 1000 // One hour
-    );
+ //   this.refreshInterval = setInterval(
+ //       () => this.props.dispatch(refreshAuthToken()),
+ //       60 * 60 * 1000 // One hour
+//    );
 }
 
 stopPeriodicRefresh() {
@@ -41,8 +42,8 @@ stopPeriodicRefresh() {
     clearInterval(this.refreshInterval);
 }
 
+//componentDidMount() {this.props.dispatch(getBudgets())}
 
-  componentDidMount() {this.props.dispatch(getBudgets())}
   render() {
     return (
       <Router>
@@ -52,6 +53,7 @@ stopPeriodicRefresh() {
           <Route exact path="/" component={About} />
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/register" component={RegistrationForm} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </main>
         <Footer />
       </div>
