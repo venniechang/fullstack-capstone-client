@@ -26,11 +26,12 @@ export class Header extends React.Component {
             <button><Link to="/login">Login</Link></button>
 			<button><Link to="/register">Register</Link></button>
             {logoutButton}
+            <button><Link to="/new-entry">Add Entry</Link></button>
         </header>
     );
 }
 }
-const mapStateToProps = state ({
+const mapStateToProps = state => ({
     isLoggedIn: state.auth.currentUser !== null
 });
 
