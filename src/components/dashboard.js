@@ -18,7 +18,6 @@ export class Dashboard extends React.Component {
                 paycheck={entry.paycheck}
                 expenses={entry.expenses}
                 finalBalance={entry.finalBalance} />)}
-                
             </div>
         )
     }

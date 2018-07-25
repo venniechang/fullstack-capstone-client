@@ -1,0 +1,8 @@
+.appHeader {
+	padding: 1rem;
+	background-color: #F6F6FA;
+	color: #21434B;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
