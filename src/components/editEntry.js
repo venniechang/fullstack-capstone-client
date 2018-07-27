@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import Input from './input';
 import { addBudget } from '../actions/budgets';
 
-export class NewEntry extends React.Component {
+export class EditEntry extends React.Component {
 	constructor(props) {
 		super(props);
 		//this.state = {
@@ -36,7 +36,7 @@ export class NewEntry extends React.Component {
 
 
 		return (
-			<form id="form" className="newEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
+			<form id="form" className="editEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="addNewEntry">
 					<h2>Add New Entry</h2>
 					<ul className="entryDate">

@@ -3,6 +3,9 @@ import React from 'react';
 
 export default function CardOverview(props) {
 
+	
+
+
 	return (
 		<div className="cardSummaryStyling">
 			<h2>Date: {props.month}-{props.year}</h2>
@@ -14,7 +17,7 @@ export default function CardOverview(props) {
 			</section>
 			<div className="buttons">
 			<button className="editEntryButton">Edit Budget</button>
-			<button className="deleteEntryButton">Delete Budget</button>
+			<button className="deleteEntryButton" onClick={() => props.onDelete(props.entryId)}>Delete Budget</button>
 			</div>
 		</div>
 	)

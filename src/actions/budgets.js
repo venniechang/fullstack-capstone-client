@@ -20,6 +20,30 @@ export const addBudget = budgetEntry => dispatch => {
     })  
 }
 
+export const editBudget = (id, budgetEntry) => dispatch => {
+    return fetch(`${API_BASE_URL}/budgets/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(budgetEntry)
+    })
+    .then(res => dispatch(getBudgets()))
+}
+
+
+export const deleteBudget = (id) => dispatch => {
+    return fetch(`${API_BASE_URL}/budgets/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(res => dispatch(getBudgets())
+)}
+
 
 export const FETCH_DASHBOARD_SUCCESS = "FETCH_DASHBOARD_SUCCESS";
 export const fetchDashboardSuccess = list => ({

@@ -2,10 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getBudgets} from '../actions/budgets';
 import CardOverview from './card-overview';
+import {deleteBudget} from '../actions/budgets';
 
 export class Dashboard extends React.Component {
 
     componentDidMount() {this.props.dispatch(getBudgets())}
+
+    onDelete= (id) => {
+		this.props.dispatch(deleteBudget(id))
+	}
+
     render() {
         return(
             <div className="dashboard">
@@ -14,6 +20,8 @@ export class Dashboard extends React.Component {
                 <CardOverview 
                 month={entry.month}
                 year={entry.year}
+                entryId={entry._id}
+                onDelete={this.onDelete}
                 currentBalance={entry.currentBalance}
                 paycheck={entry.paycheck}
                 expenses={entry.expenses}
