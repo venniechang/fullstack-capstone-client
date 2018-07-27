@@ -7,9 +7,9 @@ import {connect} from 'react-redux';
 export class NewEntry extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			editing: false
-		}
+		//this.state = {
+		//	editing: false
+		//}
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
@@ -21,13 +21,13 @@ export class NewEntry extends React.Component {
 
 
 	render() {
-		if (!this.state.editing) {
-			return (
-				<div className="add-button" onClick={() => this.setEditing(true)}>
-					<button href="#addLedgerEntry">Add</button>
-				</div>
-			)
-		}
+		//if (!this.state.editing) {
+	//		return (
+	//			<div className="add-button" onClick={() => this.setEditing(true)}>
+//					<button type="submit">Add</button>
+//				</div>
+//			)
+//		}
 
 
 
@@ -89,4 +89,6 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect()(NewEntry);
+export default reduxForm({
+	form: 'newEntry'
+})(NewEntry);
