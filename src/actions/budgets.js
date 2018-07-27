@@ -9,6 +9,17 @@ export const getBudgets = user => dispatch => {
     .then(res => dispatch(fetchDashboardSuccess(res)))
 )}
 
+export const addBudget = budgetEntry => dispatch => {
+    return fetch(`${API_BASE_URL}/budgets`, {
+        method: 'POST',
+        headers: { 
+            'Accept': 'application/json', 
+            'Content-Type': 'application/json' 
+        }, 
+        body: JSON.stringify(budgetEntry)
+    })  
+}
+
 
 export const FETCH_DASHBOARD_SUCCESS = "FETCH_DASHBOARD_SUCCESS";
 export const fetchDashboardSuccess = list => ({

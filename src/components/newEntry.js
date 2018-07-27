@@ -3,6 +3,8 @@ import {Field, reduxForm, focus} from 'redux-form';
 import { reducer as formReducer } from 'redux-form'
 import './newEntry.css';
 import {connect} from 'react-redux';
+import Input from './input';
+import { addBudget } from '../actions/budgets';
 
 export class NewEntry extends React.Component {
 	constructor(props) {
@@ -17,6 +19,7 @@ export class NewEntry extends React.Component {
 		console.log(entryValues)
 		const {currentBalance, paycheckAmount, expenses, finalBalance} = entryValues;
 		const values = {currentBalance, paycheckAmount, expenses, finalBalance};
+		this.props.dispatch(addBudget(entryValues));
 	}
 
 
@@ -35,25 +38,30 @@ export class NewEntry extends React.Component {
 			<form id="form" className="newEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="addNewEntry">
 					<h2>Add New Entry</h2>
+					<form>
+					<ul className="entryDate">
+						<li classname="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>
-						<Field input type="number" min="1" max="12" name="month" id="month" placeholder="month"/>
+						<Field component={Input} input type="number" min="1" max="12" name="month" id="month" placeholder="month"/>
+						<li classname="dateYear">Year:</li>
 						<label htmlFor="year" hidden>year</label>
-						<Field input type="number" min="2018" name="year" id="year" placeholder="year"/>
+						<Field component={Input} input type="number" min="2018" name="year" id="year" placeholder="year"/>
+					</ul>
                    			<ul className="entryList">
 								<li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
-								<Field input type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
+								<Field component={Input} input type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
 								<li className="paycheckAmount">Paycheck Amount:</li>				
 								<label htmlFor="paycheckAmount" hidden>amount</label>
-								<Field input type="number" name="paycheckAmount" id="paycheckAmount" placeholder="enter your paycheck amount"/>
+								<Field component={Input} input type="number" name="paycheckAmount" id="paycheckAmount" placeholder="enter your paycheck amount"/>
 								<li className="expenses">Expenses:</li>				
 								<label htmlFor="expenses" hidden>amount</label>
-								<Field input type="number" name="expenses" id="amount" placeholder="enter total expenses"/>
+								<Field component={Input} input type="number" name="expenses" id="amount" placeholder="enter total expenses"/>
 								<li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>
-								<Field input type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>
+								<Field component={Input} input type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>
 							</ul>
-					
+					</form>
 					
 					{/*<div className="expenses">
 						<h2 className="expenseSelect">Select Your Expense:</h2>
