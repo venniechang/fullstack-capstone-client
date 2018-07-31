@@ -28,7 +28,7 @@ export class Header extends React.Component {
 }
 }
 const mapStateToProps = state => ({
-    isLoggedIn: state.auth.currentUser !== null
+    isLoggedIn: state.auth.authToken !== null
 });
 
 export default connect(mapStateToProps)(Header);

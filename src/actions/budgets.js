@@ -7,12 +7,14 @@ export const getBudgets = user => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets`, {
         method: 'GET',
         headers: {
-            Authorization: `Bearer ${getState().auth.authToken}` 
+            Authorization: `Bearer ${getState().auth.authToken}`,
+            'Accept': 'application/json', 
+            'Content-Type': 'application/json'
         }
     })
-    .then(res => res.json()
+    .then(res => res.json())
     .then(res => dispatch(fetchDashboardSuccess(res)))
-)}
+}
 
 export const addBudget = budgetEntry => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets`, {
@@ -25,6 +27,21 @@ export const addBudget = budgetEntry => (dispatch, getState) => {
         body: JSON.stringify(budgetEntry)
     })  
 }
+
+
+export const getSingleBudget = id => (dispatch, getState) => {
+    return fetch(`${API_BASE_URL}/budgets/${id}`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${getState().auth.authToken}`,
+            'Accept': 'application/json', 
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(res => dispatch(fetchSingleBudgetSuccess(res)))
+}
+
 
 export const editBudget = (id, budgetEntry) => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets/${id}`, {
@@ -67,3 +84,8 @@ export const addBudgetEntry = placeholder => ({
     placeholder
 })
 
+export const FETCH_SINGLE_BUDGET_SUCCESS = 'FETCH_SINGLE_BUDGET_SUCCESS';
+export const fetchSingleBudgetSuccess = singleEntry => ({
+    type: FETCH_SINGLE_BUDGET_SUCCESS,
+    singleEntry
+})

@@ -6,8 +6,11 @@ import {connect} from 'react-redux';
 import Input from './input';
 import {editBudget} from '../actions/budgets';
 import {Link} from 'react-router-dom';
+import {getSingleBudget} from '../actions/budgets';
 
 export class EditEntry extends React.Component {
+
+
 	constructor(props) {
 		super(props);
 		//this.state = {
@@ -24,6 +27,7 @@ export class EditEntry extends React.Component {
 		.then(() => this.props.history.push('/dashboard'))
 	}
 
+    componentDidMount() {this.props.dispatch(getSingleBudget(this.props.match.params.id))}
 
 	render() {
 		//if (!this.state.editing) {
@@ -38,7 +42,7 @@ export class EditEntry extends React.Component {
 
 		return (
 			<form id="form" className="editEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
-				<div className="addNewEntry">
+				<div className="editCurrentEntry">
 					<h2>Add New Entry</h2>
 					<ul className="entryDate">
 						<li className="dateMonth">Month:</li>
@@ -51,7 +55,7 @@ export class EditEntry extends React.Component {
                    			<ul className="entryList">
 								<li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
+								<Field component={Input} value = {this.props.singleEntry.currentBalance} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
 								<li className="paycheck">Paycheck Amount:</li>				
 								<label htmlFor="paycheck" hidden>amount</label>
 								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/>
@@ -63,28 +67,6 @@ export class EditEntry extends React.Component {
 								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>
 							</ul>
 					
-					{/*<div className="expenses">
-						<h2 className="expenseSelect">Select Your Expense:</h2>
-						<input type="radio" name="expense" id="entertainment" value="entertainment"/>
-						<label htmlFor="entertainment">Entertainment</label>
-						
-						<input type="radio" name="expense" id="loans" value="loans"/>
-						<label htmlFor="loans">Loans</label>
-						
-						<input type="radio" name="expense" id="bills" value="bills"/>
-						<label htmlFor="bills">Bills</label>
-						
-						<input type="radio" name="expense" id="groceries" value="groceries"/>
-						<label htmlFor="groceries">Groceries</label>
-						
-						<input type="radio" name="expense" id="personal" value="personal"/>
-						<label htmlFor="personal">Personal</label>
-						
-						<input type="radio" name="expense" id="other" value="other"/>
-						<label htmlFor="other">Other</label>
-					</div>*/}
-
-
 					<button type="submit">Edit</button>
 					<button type="button"> <Link to="/dashboard">Cancel</Link></button>
 		</div> 
@@ -94,9 +76,11 @@ export class EditEntry extends React.Component {
 }
 
 const mapStateToProps = state => ({
-
+    singleEntry: state.entry.entry
 })
 
+const connectedEditEntry = connect(mapStateToProps)(EditEntry)
+
 export default reduxForm({
-	form: 'newEntry'
-})(EditEntry);
+	form: 'newEntry', enableReinitialize: true
+})(connectedEditEntry);

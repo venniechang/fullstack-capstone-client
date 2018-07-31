@@ -11,6 +11,7 @@ import Header from './header';
 import Footer from './footer';
 import {connect} from 'react-redux';
 import {getBudgets} from '../actions/budgets';
+import {refreshAuthToken} from '../actions/auth';
 
 
 class App extends Component {
@@ -30,10 +31,10 @@ componentWillUnmount() {
 }
 
 startPeriodicRefresh() {
- //   this.refreshInterval = setInterval(
- //       () => this.props.dispatch(refreshAuthToken()),
- //       60 * 60 * 1000 // One hour
-//    );
+    this.refreshInterval = setInterval(
+        () => this.props.dispatch(refreshAuthToken()),
+        60 * 60 * 1000 // One hour
+    );
 }
 
 stopPeriodicRefresh() {
