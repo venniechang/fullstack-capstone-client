@@ -4,6 +4,8 @@ import thunk from 'redux-thunk';
 import auth from './reducers/auth';
 import budgetReducer from './reducers/budgetReducer';
 import {composeWithDevTools} from 'redux-devtools-extension';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
+import {loadAuthToken} from './local-storage';
 
 const store = createStore(
     combineReducers({
@@ -13,5 +15,8 @@ const store = createStore(
     
     
     }), composeWithDevTools(applyMiddleware(thunk)));
+
+
+
 
 export default store;

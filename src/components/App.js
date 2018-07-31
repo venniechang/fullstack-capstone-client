@@ -6,6 +6,7 @@ import LoginForm from './login-form'
 import RegistrationForm from './register-form';
 import Dashboard from './dashboard';
 import NewEntry from './newEntry';
+import EditEntry from './editEntry';
 import Header from './header';
 import Footer from './footer';
 import {connect} from 'react-redux';
@@ -55,7 +56,8 @@ stopPeriodicRefresh() {
           <Route exact path="/login" component={LoginForm} />
           <Route exact path="/register" component={RegistrationForm} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exapct path="/new-entry" component={NewEntry} />
+          <Route exact path="/new-entry" component={NewEntry} />
+          <Route exact path="/edit-entry/:id" component={EditEntry} />
         </main>
         <Footer />
       </div>

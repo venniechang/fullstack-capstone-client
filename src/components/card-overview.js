@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 //import './card-overview.css';
 
 export default function CardOverview(props) {
@@ -16,7 +17,7 @@ export default function CardOverview(props) {
 				<p>Final Balance: ${props.finalBalance}</p>
 			</section>
 			<div className="buttons">
-			<button className="editEntryButton">Edit Budget</button>
+			<button className="editEntryButton"><Link to={`/edit-entry/${props.entryId}`}>Edit Budget</Link></button>
 			<button className="deleteEntryButton" onClick={() => props.onDelete(props.entryId)}>Delete Budget</button>
 			</div>
 		</div>

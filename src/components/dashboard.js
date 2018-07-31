@@ -17,7 +17,7 @@ export class Dashboard extends React.Component {
             <div className="dashboard">
                 <h2>Overview</h2>
                 {this.props.listOfEntries.map((entry) =>
-                <CardOverview 
+                <CardOverview key={entry._id}
                 month={entry.month}
                 year={entry.year}
                 entryId={entry._id}

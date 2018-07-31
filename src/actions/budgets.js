@@ -3,16 +3,22 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const getBudgets = user => dispatch => {
-    return fetch(`${API_BASE_URL}/budgets`)
+export const getBudgets = user => (dispatch, getState) => {
+    return fetch(`${API_BASE_URL}/budgets`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${getState().auth.authToken}` 
+        }
+    })
     .then(res => res.json()
     .then(res => dispatch(fetchDashboardSuccess(res)))
 )}
 
-export const addBudget = budgetEntry => dispatch => {
+export const addBudget = budgetEntry => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets`, {
         method: 'POST',
         headers: { 
+            Authorization: `Bearer ${getState().auth.authToken}`,
             'Accept': 'application/json', 
             'Content-Type': 'application/json' 
         }, 
@@ -20,10 +26,11 @@ export const addBudget = budgetEntry => dispatch => {
     })  
 }
 
-export const editBudget = (id, budgetEntry) => dispatch => {
+export const editBudget = (id, budgetEntry) => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets/${id}`, {
         method: 'PUT',
         headers: {
+            Authorization: `Bearer ${getState().auth.authToken}`,
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
@@ -33,10 +40,11 @@ export const editBudget = (id, budgetEntry) => dispatch => {
 }
 
 
-export const deleteBudget = (id) => dispatch => {
+export const deleteBudget = (id) => (dispatch, getState) => {
     return fetch(`${API_BASE_URL}/budgets/${id}`, {
         method: 'DELETE',
         headers: {
+            Authorization: `Bearer ${getState().auth.authToken}`,
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },

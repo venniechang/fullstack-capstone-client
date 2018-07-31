@@ -4,7 +4,8 @@ import { reducer as formReducer } from 'redux-form'
 import './newEntry.css';
 import {connect} from 'react-redux';
 import Input from './input';
-import { addBudget } from '../actions/budgets';
+import {editBudget} from '../actions/budgets';
+import {Link} from 'react-router-dom';
 
 export class EditEntry extends React.Component {
 	constructor(props) {
@@ -16,10 +17,10 @@ export class EditEntry extends React.Component {
 	}
 
 	onSubmit(entryValues) {
-		console.log(entryValues)
+		console.log(this.props.match.params.id)
 		const {currentBalance, paycheckAmount, expenses, finalBalance} = entryValues;
-		const values = {currentBalance, paycheckAmount, expenses, finalBalance};
-		this.props.dispatch(addBudget(entryValues))
+        const values = {currentBalance, paycheckAmount, expenses, finalBalance};
+		this.props.dispatch(editBudget(this.props.match.params.id, entryValues))
 		.then(() => this.props.history.push('/dashboard'))
 	}
 
@@ -40,10 +41,10 @@ export class EditEntry extends React.Component {
 				<div className="addNewEntry">
 					<h2>Add New Entry</h2>
 					<ul className="entryDate">
-						<li classname="dateMonth">Month:</li>
+						<li className="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>
 						<Field component={Input} type="number" min="1" max="12" name="month" id="month" placeholder="month"/>
-						<li classname="dateYear">Year:</li>
+						<li className="dateYear">Year:</li>
 						<label htmlFor="year" hidden>year</label>
 						<Field component={Input} type="number" min="2018" name="year" id="year" placeholder="year"/>
 					</ul>
@@ -84,8 +85,8 @@ export class EditEntry extends React.Component {
 					</div>*/}
 
 
-					<button type="submit">Add</button>
-					<button type="button" onClick={() => this.setEditing(false)}>Cancel</button>
+					<button type="submit">Edit</button>
+					<button type="button"> <Link to="/dashboard">Cancel</Link></button>
 		</div> 
 			</form>
 		);
@@ -98,4 +99,4 @@ const mapStateToProps = state => ({
 
 export default reduxForm({
 	form: 'newEntry'
-})(NewEntry);
+})(EditEntry);

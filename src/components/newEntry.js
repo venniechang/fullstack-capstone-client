@@ -4,7 +4,8 @@ import { reducer as formReducer } from 'redux-form'
 import './newEntry.css';
 import {connect} from 'react-redux';
 import Input from './input';
-import { addBudget } from '../actions/budgets';
+import {addBudget} from '../actions/budgets';
+import {Link} from 'react-router-dom';
 
 export class NewEntry extends React.Component {
 	constructor(props) {
@@ -85,7 +86,7 @@ export class NewEntry extends React.Component {
 
 
 					<button type="submit">Add</button>
-					<button type="button" onClick={() => this.setEditing(false)}>Cancel</button>
+					<button type="button"> <Link to="/dashboard">Cancel</Link></button>
 		</div> 
 			</form>
 		);
