@@ -41,30 +41,31 @@ export class EditEntry extends React.Component {
 
 
 		return (
-			<form id="form" className="editEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
+            <form id="form" className="editEntry" initialValues={this.props.singleEntry} 
+                  onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="editCurrentEntry">
 					<h2>Add New Entry</h2>
 					<ul className="entryDate">
 						<li className="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>
-						<Field component={Input} type="number" min="1" max="12" name="month" id="month" placeholder="month"/>
+						<Field component={Input} type="number" min="1" max="12" name="month" id="month"/>
 						<li className="dateYear">Year:</li>
 						<label htmlFor="year" hidden>year</label>
-						<Field component={Input} type="number" min="2018" name="year" id="year" placeholder="year"/>
+						<Field component={Input} type="number" min="2018" name="year" id="year"/>
 					</ul>
                    			<ul className="entryList">
 								<li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
-								<Field component={Input} value = {this.props.singleEntry.currentBalance} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
+								<Field component={Input} type="number" name="currentBalance" id="currentBalance"/>
 								<li className="paycheck">Paycheck Amount:</li>				
 								<label htmlFor="paycheck" hidden>amount</label>
-								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/>
+								<Field component={Input} type="number" name="paycheck" id="paycheck"/>
 								<li className="expenses">Expenses:</li>				
 								<label htmlFor="expenses" hidden>amount</label>
-								<Field component={Input} type="number" name="expenses" id="amount" placeholder="enter total expenses"/>
+								<Field component={Input} type="number" name="expenses" id="amount"/>
 								<li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>
+								<Field component={Input} type="number" name="finalBalance" id="finalBalance"/>
 							</ul>
 					
 					<button type="submit">Edit</button>
@@ -76,11 +77,14 @@ export class EditEntry extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    singleEntry: state.entry.entry
+    initialValues: state.entry.entry
 })
 
-const connectedEditEntry = connect(mapStateToProps)(EditEntry)
+export default connect(mapStateToProps)(reduxForm({ form: 'newEntry' })(EditEntry));
 
-export default reduxForm({
-	form: 'newEntry', enableReinitialize: true
-})(connectedEditEntry);
+
+//const connectedEditEntry = connect(mapStateToProps)(EditEntry)
+
+//export default reduxForm({
+//	form: 'newEntry', enableReinitialize: true
+//})(connectedEditEntry);
