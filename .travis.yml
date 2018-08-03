@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: k/+1w4MkXnYfPlj66RlMawnD4eFUGMUTDQ79M2D5Hu7fDg9/U2DCKilKidABWVkbGr+AotkhOsB6w9jiRb0vFfVcEan3oiKZs0z7+HfvhI8Qo0Zq9tHURn8TOWktLKHfQ9yth641sUUTzDxtupkXCWnUBZzUYR0zqNk6RByr2y1AlZMSxJwZbwQt3NDIxKgy/498XUvfVFY6ZUu6iNhs+zIO/2HTI2219rL2loKDh194HQKaaAn0MZMSlbuMoipOiv1Jlp+Bo3XBmpe3l8kQipMuBaHypdxAgddspQiSyR/h/XtImiDLXOOpCig0sKHS8YkOkYZtFAIcQY7ppXoN+ZIW23aRDjFKP3+Fv5mpELOAsZMPJ3FLt8U5Meb0I0Xny4P2hLrDNNmSScQ82Uj9qlRdOh1M0F2G79CO2h0tVgBty5/eH8mBjkLN1D3vghx9RumWnl/U8U/ujvfyqyDPwY1rHszJiEaqli+ACXVODgi3RHc6Ew9IXcpcCk/4aiaaCbWbaDOemilk3U3GdWEpps2DKYhfDTUcsjykPRx0unK/FScdQUkPPnAosnRfuFgqiQ6EA+IFX++Wv39hkGSd5Zo71JLe3UN+Yi85Vpf8AL6dCFqcHLVtu22Hcu4felu4z3znoJLbr4c5ThKenNpcLKmPpZfjvLjRGREF2eqcDEE=
+  app: fullstack-capstone-client
+  on:
+    repo: venniechang/fullstack-capstone-client
