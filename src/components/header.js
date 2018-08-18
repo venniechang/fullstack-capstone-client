@@ -21,6 +21,7 @@ export class Header extends React.Component {
             {!this.props.isLoggedIn && <button><Link to="/login">Login</Link></button>}
 			{!this.props.isLoggedIn && <button><Link to="/register">Register</Link></button>}
             {this.props.isLoggedIn && <button><Link to="/new-entry">Add Entry</Link></button>}
+            {this.props.isLoggedIn && <button><Link to="/chart">Chart</Link></button>}
             {!this.props.isLoggedIn && <Redirect to ="/" />}
             {this.props.isLoggedIn && <button onClick={() => this.handleLogout()}>Logout</button>}
         </header>

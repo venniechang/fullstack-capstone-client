@@ -1,5 +1,7 @@
 import React from 'react';
-import './about.css'
+import {Chart} from 'chart.js';
+import './about.css';
+
 
 export default function About(props) {
 	return(

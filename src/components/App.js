@@ -12,6 +12,7 @@ import Footer from './footer';
 import {connect} from 'react-redux';
 import {getBudgets} from '../actions/budgets';
 import {refreshAuthToken} from '../actions/auth';
+import Chart from './chart';
 
 
 class App extends Component {
@@ -59,6 +60,7 @@ stopPeriodicRefresh() {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/new-entry" component={NewEntry} />
           <Route exact path="/edit-entry/:id" component={EditEntry} />
+          <Route exact path="/chart" component={Chart} />
         </main>
         <Footer />
       </div>
