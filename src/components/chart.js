@@ -1,15 +1,41 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
+import {getBudgets} from '../actions/budgets';
+import {connect} from 'react-redux';
+
 
 class Chart extends React.Component {
+
+   // componentDidMount() 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.listOfEntries!==this.props.listOfEntries) {
+
+            let label = [];
+            let data = [];
+
+            this.props.listOfEntries.forEach((entry) => {
+                label.push(entry.month + "-" + entry.year);
+                data.push(entry.finalBalance);
+            });
+
+            let chartData = this.state.chartData
+            chartData.labels = label;
+            chartData.datasets[0].data = data;
+
+            this.setState({chartData: chartData})
+        }
+     }
+
     constructor(props) {
         super(props);
+        
+        this.props.dispatch(getBudgets())
         this.state={
             chartData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                     {
-                        label: 'Placeholder',
+                        label: "Final Expense",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -54,4 +80,10 @@ class Chart extends React.Component {
   }
 };
 
-export default Chart;
+const mapStateToProps = state => ({
+    listOfEntries: state.reducer.listOfEntries
+})
+
+export default connect(mapStateToProps)(Chart);
+
+//export default Chart;
