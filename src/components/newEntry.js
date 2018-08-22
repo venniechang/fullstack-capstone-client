@@ -18,8 +18,8 @@ export class NewEntry extends React.Component {
 
 	onSubmit(entryValues) {
 		console.log(entryValues)
-		const {currentBalance, paycheckAmount, expenses, finalBalance} = entryValues;
-		const values = {currentBalance, paycheckAmount, expenses, finalBalance};
+		//const {currentBalance, paycheckAmount, expenses, expenseType, finalBalance} = entryValues;
+		//const values = {currentBalance, paycheckAmount, expenses, expenseType, finalBalance};
 		this.props.dispatch(addBudget(entryValues))
 		.then(() => this.props.history.push('/dashboard'))
 	}
@@ -41,23 +41,39 @@ export class NewEntry extends React.Component {
 				<div className="addNewEntry">
 					<h2>Add New Entry</h2>
 					<ul className="entryDate">
-						<li classname="dateMonth">Month:</li>
+						<li className="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>
-						<Field component={Input} type="number" min="1" max="12" name="month" id="month" placeholder="month"/>
-						<li classname="dateYear">Year:</li>
+						<Field component={Input} type="number" min="1" max="12" name="month" id="month" placeholder="month" maxlength="2"/>
+						<li className="dateYear">Year:</li>
 						<label htmlFor="year" hidden>year</label>
-						<Field component={Input} type="number" min="2018" name="year" id="year" placeholder="year"/>
+						<Field component={Input} type="number" min="2018" name="year" id="year" placeholder="year" maxlength="4"/>
 					</ul>
                    			<ul className="entryList">
 								<li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
 								<Field component={Input} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
-								<li className="paycheck">Paycheck Amount:</li>				
+								<li className="paycheck">Paycheck Amount:</li>
 								<label htmlFor="paycheck" hidden>amount</label>
 								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/>
 								<li className="expenses">Expenses:</li>				
 								<label htmlFor="expenses" hidden>amount</label>
 								<Field component={Input} type="number" name="expenses" id="amount" placeholder="enter total expenses"/>
+
+								<li className="expenseType">Expenses Type:</li>	
+								<label htmlFor="expenseType" hidden>type</label>
+								<Field component={Input} type="radio" id="expenseFood" name="expenseType" value="food"/>
+								<label htmlFor ="expenseFood">Food</label>
+								<Field component={Input} type="radio" id="expenseUtilities" name="expenseType" value="utilities"/>
+								<label htmlFor ="expenseUtilities">Utilities</label>
+								<Field component={Input} type="radio" id="expenseRent" name="expenseType" value="rent"/>
+								<label htmlFor ="expenseFood">Rent</label>
+								<Field component={Input} type="radio" id="expenseShopping" name="expenseType" value="shopping"/>
+								<label htmlFor ="expenseFood">Shopping</label>
+								<Field component={Input} type="radio" id="expensePersonal" name="expenseType" value="personal"/>
+								<label htmlFor ="expenseFood">Personal</label>
+								<Field component={Input} type="radio" id="expenseOther" name="expenseType" value="other"/>
+								<label htmlFor ="expenseFood">Other</label>
+
 								<li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>
 								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>

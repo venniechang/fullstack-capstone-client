@@ -2,34 +2,52 @@ import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
 import {getBudgets} from '../actions/budgets';
 import {connect} from 'react-redux';
+import './chart.css';
 
 
 class Chart extends React.Component {
 
-   // componentDidMount() 
+    componentDidMount() {
+
+    this.props.dispatch(getBudgets())
+    }
+
+
     componentWillReceiveProps(nextProps) {
+        console.log(nextProps);
+        console.log(this.props);
         if(nextProps.listOfEntries!==this.props.listOfEntries) {
 
-            let label = [];
-            let data = [];
+        let label = [];
+        let data = [];
 
-            this.props.listOfEntries.forEach((entry) => {
-                label.push(entry.month + "-" + entry.year);
-                data.push(entry.finalBalance);
-            });
+        const byCategory = nextProps.listOfEntries.reduce((acc, next) => { 
+            return { ...acc, [next.expenseType]: acc[next.expenseType] ? acc[next.expenseType] + next.expenses : next.expenses } 
+        }, {})
+
+        Object.keys(byCategory).forEach(expenseType => { label.push(expenseType); 
+            data.push(byCategory[expenseType]) })
+
+        //nextProps.listOfEntries.forEach((entry) => {
+            //label.push(entry.month + "-" + entry.year);
+        //    label.push(entry.expenseType);
+        //    data.push(entry.finalBalance);
+        //    });
 
             let chartData = this.state.chartData
             chartData.labels = label;
             chartData.datasets[0].data = data;
 
             this.setState({chartData: chartData})
+
+
         }
      }
 
     constructor(props) {
         super(props);
         
-        this.props.dispatch(getBudgets())
+        //this.props.dispatch(getBudgets())
         this.state={
             chartData: {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -63,11 +81,11 @@ class Chart extends React.Component {
   render() {
     return (
       <div className="chart">
-        <h2>Your Budget</h2>
+        <h2>Expense Overview</h2>
         <Bar
           data={this.state.chartData}
-          width={100}
-          height={50}
+          width={80}
+          height={40}
           options={{
             legend: {
                 display: true,

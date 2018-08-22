@@ -25,6 +25,7 @@ export class Dashboard extends React.Component {
                 currentBalance={entry.currentBalance}
                 paycheck={entry.paycheck}
                 expenses={entry.expenses}
+                expenseType={entry.expenseType}
                 finalBalance={entry.finalBalance} />)}
             </div>
         )

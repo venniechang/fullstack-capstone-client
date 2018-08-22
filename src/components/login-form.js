@@ -1,4 +1,5 @@
 import React from 'react';
+import './login-form.css';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';

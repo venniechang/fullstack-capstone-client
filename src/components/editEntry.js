@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import { reducer as formReducer } from 'redux-form'
-import './newEntry.css';
+import './editEntry.css';
 import {connect} from 'react-redux';
 import Input from './input';
 import {editBudget} from '../actions/budgets';
@@ -44,7 +44,7 @@ export class EditEntry extends React.Component {
             <form id="form" className="editEntry" initialValues={this.props.singleEntry} 
                   onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="editCurrentEntry">
-					<h2>Add New Entry</h2>
+					<h2>Edit Current Entry</h2>
 					<ul className="entryDate">
 						<li className="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>

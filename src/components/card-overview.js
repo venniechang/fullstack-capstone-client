@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-//import './card-overview.css';
+import './card-overview.css';
 
 export default function CardOverview(props) {
 
@@ -14,6 +14,7 @@ export default function CardOverview(props) {
 				<p>Current Balance: ${props.currentBalance}</p>
 				<p>New Paycheck: ${props.paycheck}</p>
 				<p>Total Expenses: ${props.expenses}</p>
+				<p>Expense Type: {props.expenseType}</p>
 				<p>Final Balance: ${props.finalBalance}</p>
 			</section>
 			<div className="buttons">
