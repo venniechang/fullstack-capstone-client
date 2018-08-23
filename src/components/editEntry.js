@@ -54,18 +54,34 @@ export class EditEntry extends React.Component {
 						<Field component={Input} type="number" min="2018" name="year" id="year"/>
 					</ul>
                    			<ul className="entryList">
-								<li className="currentBalance">Current Balance:</li>				
+								{/* <li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
 								<Field component={Input} type="number" name="currentBalance" id="currentBalance"/>
 								<li className="paycheck">Paycheck Amount:</li>				
 								<label htmlFor="paycheck" hidden>amount</label>
-								<Field component={Input} type="number" name="paycheck" id="paycheck"/>
+								<Field component={Input} type="number" name="paycheck" id="paycheck"/> */}
 								<li className="expenses">Expenses:</li>				
 								<label htmlFor="expenses" hidden>amount</label>
 								<Field component={Input} type="number" name="expenses" id="amount"/>
-								<li className="finalBalance">Final Balance:</li>				
+
+								<li className="expenseType">Expenses Type:</li>	
+								<label htmlFor="expenseType" hidden>type</label>
+								<Field component={Input} type="radio" id="expenseFood" name="expenseType" value="food"/>
+								<label htmlFor ="expenseFood">Food</label>
+								<Field component={Input} type="radio" id="expenseUtilities" name="expenseType" value="utilities"/>
+								<label htmlFor ="expenseUtilities">Utilities</label>
+								<Field component={Input} type="radio" id="expenseRent" name="expenseType" value="rent"/>
+								<label htmlFor ="expenseFood">Rent</label>
+								<Field component={Input} type="radio" id="expenseShopping" name="expenseType" value="shopping"/>
+								<label htmlFor ="expenseFood">Shopping</label>
+								<Field component={Input} type="radio" id="expensePersonal" name="expenseType" value="personal"/>
+								<label htmlFor ="expenseFood">Personal</label>
+								<Field component={Input} type="radio" id="expenseOther" name="expenseType" value="other"/>
+								<label htmlFor ="expenseFood">Other</label>
+
+								{/* <li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="finalBalance" id="finalBalance"/>
+								<Field component={Input} type="number" name="finalBalance" id="finalBalance"/> */}
 							</ul>
 					
 					<button type="submit">Edit</button>

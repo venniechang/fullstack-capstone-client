@@ -1,9 +1,10 @@
 #aboutSection{
-    padding-top: 4rem;
+    padding-top: 80px;
     min-height: 100vh;
     text-align: center;
     font-size: 1.5rem;
     background-color: #a3deff
+
 }
 
 #aboutSection .about {

@@ -22,11 +22,12 @@ export class Dashboard extends React.Component {
                 year={entry.year}
                 entryId={entry._id}
                 onDelete={this.onDelete}
-                currentBalance={entry.currentBalance}
-                paycheck={entry.paycheck}
+                // currentBalance={entry.currentBalance}
+                // paycheck={entry.paycheck}
                 expenses={entry.expenses}
                 expenseType={entry.expenseType}
-                finalBalance={entry.finalBalance} />)}
+                // finalBalance={entry.finalBalance} 
+                />)}
             </div>
         )
     }

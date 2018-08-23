@@ -11,11 +11,11 @@ export default function CardOverview(props) {
 		<div className="cardSummaryStyling">
 			<h2>Date: {props.month}-{props.year}</h2>
 			<section>
-				<p>Current Balance: ${props.currentBalance}</p>
-				<p>New Paycheck: ${props.paycheck}</p>
+				{/* <p>Current Balance: ${props.currentBalance}</p> */}
+				{/* <p>New Paycheck: ${props.paycheck}</p> */}
 				<p>Total Expenses: ${props.expenses}</p>
 				<p>Expense Type: {props.expenseType}</p>
-				<p>Final Balance: ${props.finalBalance}</p>
+				{/* <p>Final Balance: ${props.finalBalance}</p> */}
 			</section>
 			<div className="buttons">
 			<button className="editEntryButton"><Link to={`/edit-entry/${props.entryId}`}>Edit Budget</Link></button>

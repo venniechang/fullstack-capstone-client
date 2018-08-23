@@ -1,4 +1,6 @@
 .cardSummaryStyling {
     box-sizing: border-box;
     border-color: 2px black;
+    margin-top: 80px;
+    padding: 5px;
 }

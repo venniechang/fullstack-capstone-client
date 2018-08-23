@@ -49,12 +49,12 @@ export class NewEntry extends React.Component {
 						<Field component={Input} type="number" min="2018" name="year" id="year" placeholder="year" maxlength="4"/>
 					</ul>
                    			<ul className="entryList">
-								<li className="currentBalance">Current Balance:</li>				
+								{/* <li className="currentBalance">Current Balance:</li>				
 								<label htmlFor="currentBalance" hidden>amount</label>
 								<Field component={Input} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
 								<li className="paycheck">Paycheck Amount:</li>
 								<label htmlFor="paycheck" hidden>amount</label>
-								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/>
+								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/> */}
 								<li className="expenses">Expenses:</li>				
 								<label htmlFor="expenses" hidden>amount</label>
 								<Field component={Input} type="number" name="expenses" id="amount" placeholder="enter total expenses"/>
@@ -74,9 +74,9 @@ export class NewEntry extends React.Component {
 								<Field component={Input} type="radio" id="expenseOther" name="expenseType" value="other"/>
 								<label htmlFor ="expenseFood">Other</label>
 
-								<li className="finalBalance">Final Balance:</li>				
+								{/* <li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/>
+								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/> */}
 							</ul>
 					
 					{/*<div className="expenses">
