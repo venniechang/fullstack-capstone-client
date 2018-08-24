@@ -90,6 +90,13 @@ class Chart extends React.Component {
             legend: {
                 display: true,
                 position: 'right'
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
           }}
         />

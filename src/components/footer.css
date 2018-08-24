@@ -1,15 +1,9 @@
 footer {
     text-align: center;
-    height: 4rem;
-    position: relative;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed;
     width: 100%;
     background-color: grey;
     color: white;
-}
-
-footer p {
-    padding-top: 7px;
+    padding: 7px;
+    bottom: 0;
 }

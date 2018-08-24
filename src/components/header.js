@@ -17,7 +17,7 @@ export class Header extends React.Component {
 
     return (
         <header className="appHeader">
-            <img className="appName" src="https://i.imgur.com/GcbHhry.png"/><Link to="/"></Link>
+            <Link to="/"><img className="appName" src="https://i.imgur.com/GcbHhry.png"/></Link>
             <nav className="navigation-buttons">
                 <ul>
                     <li>{!this.props.isLoggedIn && <Link to="/login">Login</Link>}</li>

@@ -14,9 +14,9 @@ export default function CardOverview(props) {
 				<p>Expense Type: {props.expenseType}</p>
 				{/* <p>Final Balance: ${props.finalBalance}</p> */}
 			</section>
-			<div className="buttons">
-			<button className="editEntryButton"><Link to={`/edit-entry/${props.entryId}`}>Edit Budget</Link></button>
-			<button className="deleteEntryButton" onClick={() => props.onDelete(props.entryId)}>Delete Budget</button>
+			<div className="buttons-container">
+				<Link to={`/edit-entry/${props.entryId}`}><button className="editEntryButton">Edit Budget</button></Link>
+				<button className="deleteEntryButton" onClick={() => props.onDelete(props.entryId)}>Delete Budget</button>
 			</div>
 		</div>
 	)

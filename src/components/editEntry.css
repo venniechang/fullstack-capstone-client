@@ -1,4 +1,4 @@
-.editEntry{
+.editEntry {
     font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
     padding: 30px;
@@ -7,9 +7,18 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+    margin-top: 100px;
+    text-align: center;
 
 }
-.editEntry h2{
+
+.editEntry  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.editEntry  h2{
     background: #4D4D4D;
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -19,17 +28,12 @@
     padding: 20px;
     margin: -30px -30px 30px -30px;
 }
-.editEntry input[type="text"],
-.editEntry input[type="date"],
-.editEntry input[type="datetime"],
-.editEntry input[type="email"],
-.editEntry input[type="number"],
-.editEntry input[type="search"],
-.editEntry input[type="time"],
-.editEntry input[type="url"],
-.editEntry input[type="password"],
-.editEntry textarea,
-.editEntry select 
+.editEntry  input[type="text"],
+.editEntry  input[type="date"],
+.editEntry  input[type="number"],
+.editEntry  input[type="password"],
+.editEntry  textarea,
+.editEntry  select 
 {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -45,12 +49,13 @@
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
-.editEntry textarea{
+.editEntry  textarea{
     resize:none;
     overflow: hidden;
 }
-.editEntry input[type="button"], 
-.editEntry input[type="submit"]{
+/* .editEntry  input[type="radio"], 
+.editEntry  input[type="button"],
+.editEntry  input[type="submit"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -64,9 +69,17 @@
     padding: 8px 18px;
     text-decoration: none;
     text-transform: uppercase;
+} */
+
+
+.expenseTypeContainer {
+    display: flex;
+    justify-content: center;
+    margin: 5px auto;
 }
-.editEntry input[type="button"]:hover, 
-.editEntry input[type="submit"]:hover {
-    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-    background-color:#34CACA;
+
+.expenseTypeContainer > * {
+    margin: 3px;
+    /* margin-left: 1px;
+    margin-right: 5px; */
 }

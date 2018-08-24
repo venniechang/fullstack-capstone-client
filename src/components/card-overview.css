@@ -1,10 +1,18 @@
-section {
-    border-color: 2px black;
+.cardSummaryStyling{
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    width: calc(25% - 10px);
+    text-align: center;
+    margin: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform .2s;    
 }
 
-.cardSummaryStyling {
-    box-sizing: border-box;
-    border-color: 2px black;
-    margin-top: 80px;
-    padding: 5px;
+.cardSummaryStyling:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardSummaryStyling h2 {
+    background-color: #f1f1f1;
+    width: 100%;
 }
