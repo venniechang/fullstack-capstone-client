@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getBudgets} from '../actions/budgets';
 import CardOverview from './card-overview';
 import {deleteBudget} from '../actions/budgets';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
 

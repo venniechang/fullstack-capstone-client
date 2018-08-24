@@ -53,7 +53,7 @@ class Chart extends React.Component {
                 labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
                 datasets: [
                     {
-                        label: "Final Expense",
+                        label: "Each of your expenses totaled by category",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',

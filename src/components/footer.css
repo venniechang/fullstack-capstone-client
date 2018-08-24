@@ -1,12 +1,15 @@
 footer {
     text-align: center;
     height: 4rem;
-    position: relative;;
+    position: relative;
     left: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    padding: 1rem;
     background-color: grey;
     color: white;
+}
+
+footer p {
+    padding-top: 7px;
 }

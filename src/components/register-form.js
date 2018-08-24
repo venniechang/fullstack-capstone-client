@@ -20,6 +20,7 @@ export class RegistrationForm extends React.Component {
 
     render() {
         return (
+            <div id="background-image">
             <form
                 className="register-form"
                 onSubmit={this.props.handleSubmit(values =>
@@ -70,6 +71,7 @@ export class RegistrationForm extends React.Component {
                     Log-in
                 </button>    
             </form>
+            </div>
         );
     }
 }

@@ -4,9 +4,6 @@ import './card-overview.css';
 
 export default function CardOverview(props) {
 
-	
-
-
 	return (
 		<div className="cardSummaryStyling">
 			<h2>Date: {props.month}-{props.year}</h2>

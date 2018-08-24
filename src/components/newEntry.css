@@ -1,6 +1,3 @@
-li {
-    list-style-type: none;
-}
 
 .newEntry{
     font-family: 'Open Sans Condensed', arial, sans;
@@ -11,6 +8,7 @@ li {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
     -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+    margin-top: 100px;
 
 }
 .newEntry h2{
@@ -73,4 +71,8 @@ li {
 .newEntry input[type="submit"]:hover {
     background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
     background-color:#34CACA;
+}
+
+.expenseType {
+    
 }

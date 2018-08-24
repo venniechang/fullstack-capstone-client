@@ -1,24 +1,29 @@
 header {
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 80px;
-    display: flex;
-    align-items: center;
-
 }
 
 header * {
     display: inline;
+
+}
+
+.navigation-buttons {
+    float: right; 
+    margin-top: 25px;
 }
 
 header li {
     margin: 20px;
+    font-size: 20px;
+    text-decoration-line: none;
 }
 
-.appName {
-    margin: left;
+header li:hover {
+    transition: 0.35s;
+    color: white;
 }
-    

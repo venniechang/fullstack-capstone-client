@@ -17,16 +17,17 @@ export class Header extends React.Component {
 
     return (
         <header className="appHeader">
-            <div className="appName"><Link to="/">Budgetfy</Link></div>
-            <nav>
+            <img className="appName" src="https://i.imgur.com/GcbHhry.png"/><Link to="/"></Link>
+            <nav className="navigation-buttons">
                 <ul>
-                    <li>{!this.props.isLoggedIn && <button><Link to="/login">Login</Link></button>}</li>
-                    <li>{!this.props.isLoggedIn && <button><Link to="/register">Register</Link></button>}</li>
-                    <li>{this.props.isLoggedIn && <button><Link to="/dashboard">Dashboard</Link></button>}</li>
-                    <li>{this.props.isLoggedIn && <button><Link to="/new-entry">Add Entry</Link></button>}</li>
-                    <li>{this.props.isLoggedIn && <button><Link to="/chart">Chart</Link></button>}</li>
+                    <li>{!this.props.isLoggedIn && <Link to="/login">Login</Link>}</li>
+                    <li>{!this.props.isLoggedIn && <Link to="/register">Register</Link>}</li>
+                    <li>{this.props.isLoggedIn && <Link to="/dashboard">Dashboard</Link>}</li>
+                    <li>{this.props.isLoggedIn && <Link to="/new-entry">Add Entry</Link>}</li>
+                    <li>{this.props.isLoggedIn && <Link to="/chart">Chart</Link>}</li>
+                    <li>{this.props.isLoggedIn && <Link to='#' onClick={() => this.handleLogout()}>Logout</Link>}</li>
                     <li>{!this.props.isLoggedIn && <Redirect to ="/" />}</li>
-                    <li>{this.props.isLoggedIn && <button onClick={() => this.handleLogout()}>Logout</button>}</li>
+                    
                 </ul>
             </nav>
         </header>

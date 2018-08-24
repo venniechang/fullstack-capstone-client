@@ -39,7 +39,7 @@ export class NewEntry extends React.Component {
 		return (
 			<form id="form" className="newEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="addNewEntry">
-					<h2>Add New Entry</h2>
+					<h2>enter your expense here</h2>
 					<ul className="entryDate">
 						<li className="dateMonth">Month:</li>
 						<label htmlFor="month" hidden>month</label>
@@ -62,17 +62,17 @@ export class NewEntry extends React.Component {
 								<li className="expenseType">Expenses Type:</li>	
 								<label htmlFor="expenseType" hidden>type</label>
 								<Field component={Input} type="radio" id="expenseFood" name="expenseType" value="food"/>
-								<label htmlFor ="expenseFood">Food</label>
+								<label htmlFor="expenseFood">Food</label>
 								<Field component={Input} type="radio" id="expenseUtilities" name="expenseType" value="utilities"/>
-								<label htmlFor ="expenseUtilities">Utilities</label>
+								<label htmlFor="expenseUtilities">Utilities</label>
 								<Field component={Input} type="radio" id="expenseRent" name="expenseType" value="rent"/>
-								<label htmlFor ="expenseFood">Rent</label>
+								<label htmlFor="expenseFood">Rent</label>
 								<Field component={Input} type="radio" id="expenseShopping" name="expenseType" value="shopping"/>
-								<label htmlFor ="expenseFood">Shopping</label>
+								<label htmlFor="expenseFood">Shopping</label>
 								<Field component={Input} type="radio" id="expensePersonal" name="expenseType" value="personal"/>
-								<label htmlFor ="expenseFood">Personal</label>
+								<label htmlFor="expenseFood">Personal</label>
 								<Field component={Input} type="radio" id="expenseOther" name="expenseType" value="other"/>
-								<label htmlFor ="expenseFood">Other</label>
+								<label htmlFor="expenseFood">Other</label>
 
 								{/* <li className="finalBalance">Final Balance:</li>				
 								<label htmlFor="finalBalance" hidden>amount</label>

@@ -2,4 +2,9 @@
     max-width: 75%;
     max-height: 75%;
     padding: 20px;
+    margin-top: 60px;
+}
+
+.chart h2 {
+    text-align: center;
 }
