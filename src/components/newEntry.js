@@ -41,7 +41,7 @@ export class NewEntry extends React.Component {
 				<div className="addNewEntry">
 					<h2>enter your expense here</h2>
 					<ul className="entryDate">
-						<li className="dateMonth">Month:</li>
+						
 						<label htmlFor="month" hidden>month</label>
 						<Field 
 							component={Input} 
@@ -53,7 +53,8 @@ export class NewEntry extends React.Component {
 							placeholder="month" 
 							maxlength="2"
 						/>
-						<li className="dateYear">Year:</li>
+						<li className="dateMonth">Month</li>
+						
 						<label htmlFor="year" hidden>year</label>
 						<Field 
 							component={Input} 
@@ -64,7 +65,8 @@ export class NewEntry extends React.Component {
 							placeholder="year" 
 							maxlength="4"
 						/>
-						<li className="expenses">Expenses:</li>				
+						<li className="dateYear">Year</li>
+									
 						<label htmlFor="expenses" hidden>amount</label>
 						<Field 
 							component={Input} 
@@ -73,6 +75,8 @@ export class NewEntry extends React.Component {
 							id="amount" 
 							placeholder="enter total expenses"
 						/>
+						<li className="expenses">Expense Amount</li><br />
+							
 						<li className="expenseType">Expenses Type:</li>	
 					</ul>	
 					
