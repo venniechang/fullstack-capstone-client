@@ -50,7 +50,9 @@ export class LoginForm extends React.Component {
                 />
                 <label htmlFor="password">Password</label> <br />
 
-                <button disabled={this.props.pristine || this.props.submitting}>
+                <button
+                    className="register-buttons" 
+                    disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button><br />
 

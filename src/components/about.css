@@ -2,28 +2,30 @@
     margin-top: 80px;
     min-height: calc(100vh - 80px);
     text-align: center;
-    background-image: linear-gradient(
+    background: linear-gradient(
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     ),
-    url("https://i.imgur.com/RpXPgiE.jpg");
+    url("https://i.imgur.com/RpXPgiE.jpg") no-repeat center center fixed;
     background-size: cover;
-    height: 100%
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #aboutSection .about {
     /* font-size: 20px;
     margin: 3rem 0;
     text-align: center; */
-        font-size: 30px;
+        font-size: 2rem;
         text-align: center;
-        padding-top: 300px;  
+        /* padding-top: 300px;   */
         color:white;
         text-transform: uppercase;
-        white-space: nowrap;
+        /* white-space: nowrap; */
         font-weight: 900;
 }
-
 
 #aboutSection .intro {
     text-align: center;
@@ -34,3 +36,10 @@
     height: 100vh;
     margin: auto;
 }
+
+
+@media screen and (min-width: 1000px) {
+    #aboutSection .about{
+    font-size: 30px
+    }
+  }

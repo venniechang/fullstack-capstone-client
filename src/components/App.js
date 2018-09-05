@@ -15,6 +15,7 @@ import {refreshAuthToken} from '../actions/auth';
 import Chart from './chart';
 
 
+
 class App extends Component {
 
   componentDidUpdate(prevProps) {

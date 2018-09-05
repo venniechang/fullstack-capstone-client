@@ -89,7 +89,7 @@ class Chart extends React.Component {
           options={{
             legend: {
                 display: true,
-                position: 'right'
+                position: 'bottom'
             },
             scales: {
                 yAxes: [{

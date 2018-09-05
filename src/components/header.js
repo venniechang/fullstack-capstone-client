@@ -5,6 +5,7 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {connect} from 'react-redux';
 
+
 export class Header extends React.Component {
 
     handleLogout() {
@@ -20,15 +21,15 @@ export class Header extends React.Component {
             <Link to="/"><img className="appName" src="https://i.imgur.com/GcbHhry.png"/></Link>
             <nav className="navigation-buttons">
                 <ul>
-                    <li>{!this.props.isLoggedIn && <Link to="/login">Login</Link>}</li>
-                    <li>{!this.props.isLoggedIn && <Link to="/register">Register</Link>}</li>
-                    <li>{this.props.isLoggedIn && <Link to="/dashboard">Dashboard</Link>}</li>
-                    <li>{this.props.isLoggedIn && <Link to="/new-entry">Add Entry</Link>}</li>
-                    <li>{this.props.isLoggedIn && <Link to="/chart">Chart</Link>}</li>
-                    <li>{this.props.isLoggedIn && <Link to='#' onClick={() => this.handleLogout()}>Logout</Link>}</li>
-                    <li>{!this.props.isLoggedIn && <Redirect to ="/" />}</li>
-                    
+                    {!this.props.isLoggedIn && <li><Link to="/login">Login</Link></li>}
+                    {!this.props.isLoggedIn && <li><Link to="/register">Register</Link></li>}
+                    {this.props.isLoggedIn && <li><Link to="/dashboard">Dashboard</Link></li>}
+                    {this.props.isLoggedIn &&  <li><Link to="/new-entry">Add Entry</Link></li>}
+                    {this.props.isLoggedIn && <li><Link to="/chart">Chart</Link></li>}
+                    {this.props.isLoggedIn && <li><Link to='#' onClick={() => this.handleLogout()}>Logout</Link></li>}
+                    {!this.props.isLoggedIn && <li><Redirect to ="/" /></li>}
                 </ul>
+            
             </nav>
         </header>
     );

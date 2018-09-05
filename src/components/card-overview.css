@@ -17,3 +17,28 @@
     width: 100%;
 }
 
+.editEntryButton {
+    color: black !important;
+}
+
+.deleteEntryButton {
+    color: black !important;
+}
+
+@media (max-width: 800px) {
+    .cardSummaryStyling {
+        width: calc(33% - 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .cardSummaryStyling {
+        width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 400px) {
+    .cardSummaryStyling {
+        width: calc(100% - 10px);
+    }
+}
