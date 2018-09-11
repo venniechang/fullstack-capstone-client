@@ -21,6 +21,9 @@ header * {
     color: white;
 }
 
+.register-link > a {
+    color: white !important;
+}
 a {
     color: rgba(0, 0, 0, 1) !important;
 }
@@ -58,7 +61,7 @@ header li {
     }
 
     .navigation-buttons {
-        float: none; 
+        float: left; 
     }
 }
 

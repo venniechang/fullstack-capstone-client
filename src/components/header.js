@@ -21,8 +21,8 @@ export class Header extends React.Component {
             <Link to="/"><img className="appName" src="https://i.imgur.com/GcbHhry.png"/></Link>
             <nav className="navigation-buttons">
                 <ul>
-                    {!this.props.isLoggedIn && <li><Link to="/login">Login</Link></li>}
-                    {!this.props.isLoggedIn && <li><Link to="/register">Register</Link></li>}
+                    {!this.props.isLoggedIn && <li className="register-link"><Link to="/login">Login</Link></li>}
+                    {!this.props.isLoggedIn && <li className="register-link"><Link to="/register">Register</Link></li>}
                     {this.props.isLoggedIn && <li><Link to="/dashboard">Dashboard</Link></li>}
                     {this.props.isLoggedIn &&  <li><Link to="/new-entry">Add Entry</Link></li>}
                     {this.props.isLoggedIn && <li><Link to="/chart">Chart</Link></li>}
