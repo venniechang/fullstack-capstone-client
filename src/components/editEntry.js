@@ -99,10 +99,10 @@ export class EditEntry extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    initialValues: state.entry.entry
+	initialValues: state.entry.entry
 })
 
-export default connect(mapStateToProps)(reduxForm({ form: 'newEntry' })(EditEntry));
+export default connect(mapStateToProps)(reduxForm({ form: 'newEntry', enableReinitialize: true})(EditEntry));
 
 
 //const connectedEditEntry = connect(mapStateToProps)(EditEntry)

@@ -1,6 +1,6 @@
 .editEntry {
     font-family: 'Open Sans Condensed', arial, sans;
-    width: 500px;
+    max-width: 500px;
     padding: 30px;
     background: #FFFFFF;
     margin: 50px auto;
@@ -76,6 +76,8 @@
     display: flex;
     justify-content: center;
     margin: 5px auto;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .expenseTypeContainer > * {
@@ -83,3 +85,9 @@
     /* margin-left: 1px;
     margin-right: 5px; */
 }
+
+@media screen and (max-width: 500px) {
+    .expenseTypeContainer > * {
+        width: 20%
+    }
+  }

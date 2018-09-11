@@ -1,6 +1,6 @@
 .newEntry{
     font-family: 'Open Sans Condensed', arial, sans;
-    width: 500px;
+    max-width: 500px;
     padding: 30px;
     background: #FFFFFF;
     margin: 50px auto;
@@ -58,9 +58,9 @@
     display: flex;
 }
 
- .entryList .form-input {
+/* .entryList .form-input {
     width: 33%
-}
+} */
 
 .expenseTypeContainer {
     display: flex;

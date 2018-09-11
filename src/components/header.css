@@ -21,9 +21,18 @@ header * {
     color: white;
 }
 
+.navigation-buttons a {
+    font-size: 18px;
+}
+
 .register-link > a {
     color: white !important;
 }
+
+.register-link > a:hover {
+    color: white !important;
+}
+
 a {
     color: rgba(0, 0, 0, 1) !important;
 }
@@ -50,10 +59,17 @@ header li {
         align-items: center;
         width: 100vw;
         padding: 0;
+        
     }
+
+    a:hover {
+        color: rgb(0, 0, 0) !important;
+        text-decoration: none !important;
+       }
 
     .navigation-buttons {
         margin-bottom: 50px;
+        margin-top: 10px;
     }
 
     header {
@@ -61,7 +77,7 @@ header li {
     }
 
     .navigation-buttons {
-        float: left; 
+        float: none; 
     }
 }
 
