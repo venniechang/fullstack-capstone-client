@@ -2,17 +2,17 @@
 
 <p><a href="https://www.thinkful.com/">Thinkful</a> Final Capstone Project - A fullstack capstone app that utilizes both frontend and backend technologies, built with <a href="https://react.js.org">React</a> and <a href="https://redux.js.org">Redux</a>.
 
-![homepage](https://github.com/venniechang/node-capstone-project/blob/master/public/images/homepage.jpg)
+![homepage](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/homepage.jpg)
 
-![register](https://github.com/venniechang/node-capstone-project/blob/master/public/images/register.jpg)
+![register](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/register.jpg)
 
-![login](https://github.com/venniechang/node-capstone-project/blob/master/public/images/login.jpg)
+![login](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/login.jpg)
 
-![dashboard](https://github.com/venniechang/node-capstone-project/blob/master/public/images/dashboard.jpg)
+![dashboard](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/dashboard.jpg)
 
-![addentry](https://github.com/venniechang/node-capstone-project/blob/master/public/images/addentry.jpg)
+![addentry](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/addentry.jpg)
 
-![chart](https://github.com/venniechang/node-capstone-project/blob/master/public/images/chart.jpg)
+![chart](https://github.com/venniechang/fullstack-capstone-client/blob/master/public/images/chart.jpg)
 
 <h2>What is Expensciate?</h2>
 <p>This website helps users keep track of their expenses over time.</p>
