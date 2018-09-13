@@ -5,7 +5,6 @@ import './about.css';
 export default function About(props) {
 	return(
 		<div id="aboutSection">
-			{/* <img class="about-background" src="https://i.imgur.com/RpXPgiE.jpg"/> */}
 			<div className="intro">
 				<h3 className="about">
                 	<p>Keep track of your expenses with expensciate!</p><br />

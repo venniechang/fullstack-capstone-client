@@ -7,3 +7,10 @@ footer {
     padding: 7px;
     bottom: 0;
 }
+
+@media screen and (max-width: 720px) {
+    footer {
+        position: relative;
+        margin-top: 10px;
+    }
+  }

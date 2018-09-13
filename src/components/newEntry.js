@@ -1,8 +1,6 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import { reducer as formReducer } from 'redux-form'
+import {Field, reduxForm} from 'redux-form';
 import './newEntry.css';
-import {connect} from 'react-redux';
 import Input from './input';
 import {addBudget} from '../actions/budgets';
 import {Link} from 'react-router-dom';
@@ -10,16 +8,11 @@ import {Link} from 'react-router-dom';
 export class NewEntry extends React.Component {
 	constructor(props) {
 		super(props);
-		//this.state = {
-		//	editing: false
-		//}
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
 	onSubmit(entryValues) {
 		console.log(entryValues)
-		//const {currentBalance, paycheckAmount, expenses, expenseType, finalBalance} = entryValues;
-		//const values = {currentBalance, paycheckAmount, expenses, expenseType, finalBalance};
 		this.props.dispatch(addBudget(entryValues))
 		.then(() => this.props.history.push('/dashboard'))
 	}
@@ -81,14 +74,6 @@ export class NewEntry extends React.Component {
 					</ul>	
 					
                    			<ul className="entryList">
-								{/* <li className="currentBalance">Current Balance:</li>				
-								<label htmlFor="currentBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="currentBalance" id="currentBalance" placeholder="enter current balance"/>
-								<li className="paycheck">Paycheck Amount:</li>
-								<label htmlFor="paycheck" hidden>amount</label>
-								<Field component={Input} type="number" name="paycheck" id="paycheck" placeholder="enter your paycheck amount"/> */}
-								
-
 								<div className="expenseTypeContainer">
 									<label htmlFor="expenseType" hidden>type</label>
 									<Field component={Input} type="radio" id="expenseFood" name="expenseType" value="food"/>
@@ -104,33 +89,8 @@ export class NewEntry extends React.Component {
 									<Field component={Input} type="radio" id="expenseOther" name="expenseType" value="other"/>
 									<label htmlFor="expenseFood">Other</label>
 								</div>
-
-								{/* <li className="finalBalance">Final Balance:</li>				
-								<label htmlFor="finalBalance" hidden>amount</label>
-								<Field component={Input} type="number" name="finalBalance" id="finalBalance" placeholder="enter your total balance"/> */}
 							</ul>
 					
-					{/*<div className="expenses">
-						<h2 className="expenseSelect">Select Your Expense:</h2>
-						<input type="radio" name="expense" id="entertainment" value="entertainment"/>
-						<label htmlFor="entertainment">Entertainment</label>
-						
-						<input type="radio" name="expense" id="loans" value="loans"/>
-						<label htmlFor="loans">Loans</label>
-						
-						<input type="radio" name="expense" id="bills" value="bills"/>
-						<label htmlFor="bills">Bills</label>
-						
-						<input type="radio" name="expense" id="groceries" value="groceries"/>
-						<label htmlFor="groceries">Groceries</label>
-						
-						<input type="radio" name="expense" id="personal" value="personal"/>
-						<label htmlFor="personal">Personal</label>
-						
-						<input type="radio" name="expense" id="other" value="other"/>
-						<label htmlFor="other">Other</label>
-					</div>*/}
-
 					<div className="button-container">
 						<button className="button-submit" type="submit">Add Your Entry</button>
 						<Link to="/dashboard"><button className="button-cancel" type="button">Cancel</button></Link>
@@ -140,10 +100,6 @@ export class NewEntry extends React.Component {
 		);
 	}
 }
-
-const mapStateToProps = state => ({
-
-})
 
 export default reduxForm({
 	form: 'newEntry'

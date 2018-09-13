@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import About from './about';
 import LoginForm from './login-form'
 import RegistrationForm from './register-form';
@@ -10,7 +10,6 @@ import EditEntry from './editEntry';
 import Header from './header';
 import Footer from './footer';
 import {connect} from 'react-redux';
-import {getBudgets} from '../actions/budgets';
 import {refreshAuthToken} from '../actions/auth';
 import Chart from './chart';
 
