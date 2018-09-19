@@ -17,8 +17,8 @@ export class EditEntry extends React.Component {
 
 	onSubmit(entryValues) {
 		console.log(this.props.match.params.id)
-		const {currentBalance, paycheckAmount, expenses, finalBalance} = entryValues;
-        const values = {currentBalance, paycheckAmount, expenses, finalBalance};
+		//const {currentBalance, paycheckAmount, expenses, finalBalance} = entryValues;
+        //const values = {currentBalance, paycheckAmount, expenses, finalBalance};
 		this.props.dispatch(editBudget(this.props.match.params.id, entryValues))
 		.then(() => this.props.history.push('/dashboard'))
 	}

@@ -32,7 +32,7 @@ export class NewEntry extends React.Component {
 		return (
 			<form id="form" className="newEntry" onSubmit={this.props.handleSubmit(entryValues => this.onSubmit(entryValues))}>
 				<div className="addNewEntry">
-					<h2>enter your expense here</h2>
+					<h2 className="expenseTitle">enter your expense here</h2>
 					<ul className="entryDate">
 						
 						<label htmlFor="month" hidden>month</label>
@@ -43,7 +43,7 @@ export class NewEntry extends React.Component {
 							max="12" 
 							name="month" 
 							id="month" 
-							placeholder="month" 
+							placeholder="enter month (ex: 05)" 
 							maxlength="2"
 						/>
 						<li className="dateMonth">Month</li>
@@ -55,7 +55,7 @@ export class NewEntry extends React.Component {
 							min="2018" 
 							name="year" 
 							id="year" 
-							placeholder="year" 
+							placeholder="enter year (ex: 2018)" 
 							maxlength="4"
 						/>
 						<li className="dateYear">Year</li>
@@ -66,7 +66,7 @@ export class NewEntry extends React.Component {
 							type="number" 
 							name="expenses" 
 							id="amount" 
-							placeholder="enter total expenses"
+							placeholder="enter expense (ex: 450)"
 						/>
 						<li className="expenses">Expense Amount</li><br />
 							
