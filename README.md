@@ -57,7 +57,7 @@
 </ul>
 
 <h2>Live Link</h2>
-<p>An updated version of this website can be found at: <a href="https://vast-river-44985.herokuapp.com">https://vast-river-44985.herokuapp.com</a></p>
+<p>An updated version of this website can be found at: <a href="https://expensciate.herokuapp.com/">https://expensciate.herokuapp.com/</a></p>
 
 <h2>Responsive Design</h2>
 <p>This website is created to be responsive in both desktop and mobile devices.</p>
